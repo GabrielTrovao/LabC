@@ -1,0 +1,10 @@
+username
+password
+nome
+contacto
+quantidade total de produtos comprados
+(
+codigo produto
+quantidade comprada desse produto
+valor total gsto nesse produto
+) repete para todos os produtos comprados
