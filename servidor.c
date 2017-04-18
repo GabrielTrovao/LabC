@@ -2,18 +2,37 @@
 #include <stdio.h>
 #include <unistd.h>
 
+
+/*	criarUser
+ * 	desc
+*/
 void criarUser(){
 	system("cls");
 	printf("criar user");
 	getch();
 }
 
+/*	gerirStocks
+ * 	desc
+*/
 void gerirStocks(){
+	system("cls");
+	printf("gerir stocks");
+	getch();
 }
 
+/*	verStats
+ * 	desc
+*/
 void verStats(){
+	system("cls");
+	printf("ver stats");
+	getch();
 }
 
+/*	login
+ * 	desc
+*/
 int login(){
   char user[100], pass[100];
 	int correctLogin = 0;
@@ -21,26 +40,31 @@ int login(){
   	system("cls");
     printf("username: ");
     scanf("%s", user);
-		printf("password: ");
-    scanf("%s", pass);
-    /* usar unistd para read/write
+    /* usar unistd para read/write */
+    /*
 		while not end of file
 			pesquisar user
 	    if user then
+	    	printf("password: ");
+    		scanf("%s", pass);
 	    	pesquisar password
 	    	if password
 	    		return 1
 	    	else login
 			else login
-    */ 
+    */
     correctLogin = 1;
   }while(!correctLogin);
   
   return 1;
 }
 
-/* getOption(
-
+/*	getOption
+ * 	Lê input do utilizador até ser válido
+ *  O input é válido quando se encontra entre lower e upper
+ *  Isto elimina a necessidade de reescrever menus quando o input lido é inválido
+ *  e a de reescrever este ciclo sempre que se 
+ *  ex: getOption('1','4') devolve apenas '1', '2', '3' ou '4'
 */
 char getOption(char lower, char upper){
 	char in;
@@ -50,9 +74,13 @@ char getOption(char lower, char upper){
 	return in;
 }
 
+/*	menuLogin
+ * 	desc
+*/
 char menuLogin(){
   system("cls");
-  printf( "1) Login\n"
+  printf( "**Menu**\n"
+					"1) Login\n"
 					"2) Close\n");
   char in = getOption('1','2');
   if (in == '1') {
@@ -60,7 +88,10 @@ char menuLogin(){
 	} else return 0;
 }
 
-char menu() {
+/*	menuAdmin
+ * 	desc
+*/
+char menuAdmin() {
 	system("cls");
   printf( "**Menu**\n"
 					"1) Criar Novo Utilizador\n"
@@ -97,7 +128,7 @@ int main(){
 		success = menuLogin(); 
 		if (success) {
 		  do {
-				option = menu();
+				option = menuAdmin();
 		  }while(option != '4');
 		}	
   }while(success);
