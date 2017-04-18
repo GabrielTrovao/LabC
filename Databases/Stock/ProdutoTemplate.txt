@@ -1,0 +1,8 @@
+int codigo
+char nome[100]
+int quantidade
+float custo
+float preco
+char desc[200]
+int vendas
+float lucro
